@@ -1,0 +1,59 @@
+.message {
+  display: flex;
+  gap: 13px;
+
+  &.messageUser {
+    flex-direction: row-reverse;
+    align-self: flex-end;
+  }
+}
+
+.text {
+  max-width: 400px;
+  padding: 12px 20px;
+
+  font-family: "SF Pro Text", sans-serif;
+  font-size: 18px;
+  font-feature-settings:
+    "clig" off,
+    "liga" off;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 155%;
+  color: #fff;
+
+  background: #007afe;
+  border-radius: 28px;
+
+  .messageUser & {
+    color: #000;
+    background: rgb(34 118 245 / 20%);
+  }
+}
+
+.cursor {
+  position: relative;
+  bottom: -0.2em;
+
+  display: inline-block;
+
+  width: 0.4ch;
+  height: 1em;
+
+  line-height: inherit;
+
+  background-color: #fff;
+
+  animation: identifier infinite ease 0.4s;
+}
+
+@keyframes identifier {
+  0%,
+  100% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}

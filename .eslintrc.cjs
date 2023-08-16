@@ -26,6 +26,7 @@ module.exports = {
     "import/no-unresolved": "off",
     "import/no-absolute-path": "off",
     "no-shadow": "off",
+    "import/extensions": "off",
     "react/self-closing-comp": "off",
     "prettier/prettier": "error",
     "react/function-component-definition": [

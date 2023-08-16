@@ -1,0 +1,34 @@
+.buttonSend {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+
+  aspect-ratio: 1;
+  height: 100%;
+  max-height: 40px;
+
+  transition: transform 0.25s ease;
+
+  path {
+    transform-origin: center 50%;
+    transition: transform 0.25s ease;
+  }
+
+  rect {
+    transform-origin: 100% center;
+    transition: transform 0.4s ease;
+  }
+
+  &:hover {
+    transform: translateY(-50%) scale(1.1);
+  }
+
+  &:hover rect {
+    transform: scale(0);
+  }
+
+  &:hover path {
+    transform: translateX(150%);
+  }
+}

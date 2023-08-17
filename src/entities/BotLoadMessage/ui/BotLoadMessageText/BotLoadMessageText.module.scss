@@ -1,0 +1,26 @@
+.cursor {
+  position: relative;
+  bottom: -0.2em;
+
+  display: inline-block;
+
+  width: 0.4ch;
+  height: 1em;
+
+  line-height: inherit;
+
+  background-color: #fff;
+
+  animation: identifier infinite ease 0.4s;
+}
+
+@keyframes identifier {
+  0%,
+  100% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}

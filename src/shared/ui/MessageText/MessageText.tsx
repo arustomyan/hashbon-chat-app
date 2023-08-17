@@ -3,13 +3,18 @@ import style from "./MessageText.module.scss";
 
 interface MessageTextProps {
   message: string;
+  children?: React.ReactNode;
 }
 
-const MessageText: FC<MessageTextProps> = ({ message }) => (
+const MessageText: FC<MessageTextProps> = ({ message, children }) => (
   <span className={style.text}>
     {message}
-    <span className="cursor"></span>
+    {children}
   </span>
 );
+
+MessageText.defaultProps = {
+  children: undefined,
+};
 
 export default MessageText;

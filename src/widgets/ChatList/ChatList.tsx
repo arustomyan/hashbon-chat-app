@@ -1,49 +1,47 @@
-import { useState } from "react";
+/* eslint-disable arrow-body-style */
+import { FC } from "react";
 import { BotMessage } from "@entities/BotMessage";
-import { UserMessage } from "@entities/UserMessage/";
+import { UserMessage } from "@entities/UserMessage";
+import { BotLoadMessage } from "@entities/BotLoadMessage";
 import style from "./ChatList.module.scss";
 
-type message = {
-  message: string;
-  user: boolean;
-  id: number;
-};
+interface ChatListProps {
+  messages: { id: string; message: string; user: boolean }[];
+  isLoad: boolean;
+  loadMessage: string;
+  handleStopPrint: (message: string) => void;
 
-const ChatList = () => {
-  const [arrayMessages, setArrayMessages] = useState<message[]>([
-    {
-      message: "skcdkscmkmc",
-      user: true,
-      id: 3,
-    },
-    {
-      message: "skcdkscmkmc",
-      user: false,
-      id: 2,
-    },
-    {
-      message: "skcdkscmkmc",
-      user: true,
-      id: 4,
-    },
-    {
-      message: "skcdkscmkmc",
-      user: false,
-      id: 1,
-    },
-  ]);
+  isDoneFetch: boolean;
+}
 
+const ChatList: FC<ChatListProps> = ({
+  messages,
+  isLoad,
+  loadMessage,
+  handleStopPrint,
+  isDoneFetch,
+}) => {
   return (
     <ul className={style.chatList}>
-      {arrayMessages.map((item) => (
-        <li>
+      {messages.map((item) => (
+        <li key={item.id}>
           {item.user ? (
-            <BotMessage message={item.message} key={item.id} />
+            <BotMessage message={item.message} />
           ) : (
-            <UserMessage message={item.message} key={item.id} />
+            <UserMessage message={item.message} />
           )}
         </li>
       ))}
+
+      {isLoad && (
+        <li>
+          <BotLoadMessage
+            isDoneFetch={isDoneFetch}
+            message={loadMessage}
+            handleStopPrint={handleStopPrint}
+          />
+        </li>
+      )}
     </ul>
   );
 };

@@ -7,10 +7,10 @@ module.exports = {
   extends: [
     "eslint:recommended",
     "plugin:eslint-plugin-import/recommended",
-    "plugin:@typescript-eslint/recommended",
     "airbnb",
     "airbnb/hooks",
     "plugin:react/jsx-runtime",
+    "plugin:@typescript-eslint/recommended",
     "prettier",
   ],
   ignorePatterns: ["dist", ".eslintrc.cjs"],

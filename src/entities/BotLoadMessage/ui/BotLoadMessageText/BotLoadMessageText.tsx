@@ -24,8 +24,6 @@ const BotLoadMessageText: FC<BotLoadMessageTextProps> = ({
      * Если длина значения не совпадает, добавляем следующий символ.
      */
 
-    console.log(value.length === message.length);
-
     setTimeout(() => {
       if (value.length === message.length && isDoneFetch) {
         handleStopPrint(message);

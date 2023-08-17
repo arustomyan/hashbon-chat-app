@@ -9,7 +9,7 @@ interface UserMessageProps {
 const UserMessage: FC<UserMessageProps> = ({ message }) => (
   <Message user>
     <UserAvatar size={40} />
-    <MessageText message={message} />
+    <MessageText message={message} user />
   </Message>
 );
 

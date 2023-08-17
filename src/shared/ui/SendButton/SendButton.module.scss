@@ -31,4 +31,8 @@
   &:hover path {
     transform: translateX(150%);
   }
+
+  &:disabled rect {
+    fill: darkgray;
+  }
 }

@@ -15,7 +15,7 @@ const BotLoadMessage: FC<BotLoadMessageProps> = ({ message, handleStopPrint, isD
       message={message}
       handleStopPrint={handleStopPrint}
       isDoneFetch={isDoneFetch}
-      speedPrint={100}
+      speedPrint={10}
     />
   </Message>
 );

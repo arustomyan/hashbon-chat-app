@@ -15,7 +15,7 @@
   background: #007afe;
   border-radius: 28px;
 
-  .messageUser & {
+  &.messageUser {
     color: #000;
     background: rgb(34 118 245 / 20%);
   }

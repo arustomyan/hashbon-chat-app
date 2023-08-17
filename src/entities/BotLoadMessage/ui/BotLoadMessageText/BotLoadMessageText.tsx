@@ -24,16 +24,13 @@ const BotLoadMessageText: FC<BotLoadMessageTextProps> = ({
      * Если длина значения не совпадает, добавляем следующий символ.
      */
 
+    console.log(value.length === message.length);
+
     setTimeout(() => {
       if (value.length === message.length && isDoneFetch) {
         handleStopPrint(message);
-      } else if (value.length !== message.length) {
-        setValue((prev) => {
-          if (prev.length === message.length && isDoneFetch) {
-            return message;
-          }
-          return prev + message[prev.length];
-        });
+      } else if (value.length !== message.length && message[value.length]) {
+        setValue((prev) => prev + message[prev.length]);
       }
     }, speedPrint);
   }, [message, handleStopPrint, value, isDoneFetch, speedPrint]);

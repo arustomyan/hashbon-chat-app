@@ -1,5 +1,5 @@
-import ChatPages from "@pages/ChatPages/ChatPages.tsx";
+import { ChatPage } from "@pages/ChatPages";
 
-const App = () => <ChatPages />;
+const App = () => <ChatPage />;
 
 export default App;

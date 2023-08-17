@@ -3,11 +3,12 @@ import style from "./SendButton.module.scss";
 
 interface SendButtonProps {
   type?: "button" | "submit" | "reset" | undefined;
+  disabled: boolean;
 }
 
-const SendButton: FC<SendButtonProps> = ({ type }) => (
+const SendButton: FC<SendButtonProps> = ({ type, disabled }) => (
   // eslint-disable-next-line react/button-has-type
-  <button className={style.buttonSend} type={type}>
+  <button className={style.buttonSend} type={type} disabled={disabled}>
     <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect width="40" height="40" rx="20" fill="#007AFE" />
       <path

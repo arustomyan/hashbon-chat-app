@@ -1,0 +1,30 @@
+.root {
+  overflow: hidden;
+  overflow-y: auto;
+  flex: auto;
+
+  height: 100%;
+  max-height: 70vh;
+
+  background: #fff;
+  border: 1px solid #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 31px 13px rgb(10 63 142 / 8%);
+}
+
+.chatList {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+  justify-content: end;
+
+  width: 100%;
+  height: fit-content;
+  min-height: 100%;
+  padding: 0 15px 55px;
+}
+
+.chatList li:last-child {
+  scroll-snap-align: end;
+}
